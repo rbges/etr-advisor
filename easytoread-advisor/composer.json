@@ -1,0 +1,7 @@
+{
+    "require": {
+        "php": "^7.2.11",
+        "ext-mbstring": "*",
+        "phpmailer/phpmailer": "^6.0"
+    }
+}
