@@ -18,7 +18,7 @@ function textAnalyzer(){
 
     $textAnalyzerArray = array();
  
-    //Function getParagraphs, located at textConverter.php file
+    //Function allText, located at textConverter.php file
     $paragraphs = getParagraphs();
 
     //Vars
@@ -101,7 +101,6 @@ function textAnalyzer(){
             //Sentences can't contain more than 60 characters
             if ((int)$subtraction>(int)$maxChar['maxC']){ 
                 $textAnalyzerArray['P1'] = 'Las siguientes líneas:<br><br>'.$paragraphs[$i]. '<br><br>contienen frases de más de '.$maxChar['maxC'].' caracteres. Concretamente tienen '.$subtraction.' caracteres.';
-                 //echo "ERROR: las frases no pueden contener más de 60 caracteres" . '<br>';
             }
         }
         $i++;
@@ -132,7 +131,7 @@ function textAnalyzer(){
         $i++;
     }
     if (!empty($P2_errors)){
-        $numberError = implode(", ", $P2_errors);
+        $numberError = implode(", ", array_unique($P2_errors));
         $textAnalyzerArray['P2'] = 'Se recomienda sustituir los numeros:<br><br>'.$numberError.'<br><br>por las palabras "pocos, algunos o muchos" por ejemplo.';
     }
     unset($P2_errors);
@@ -200,7 +199,8 @@ function textAnalyzer(){
     
     $P5_errors=array(); $P7_errors=array(); $P9_errors=array(); $P10_errors=array(); $P11_errors=array(); $P12_errors=array(); 
     
-    $secondPersonCounter=0;
+    $firstPersonCounter=0;
+    $thirdPersonCounter=0;
     //First of all. Iterating the paragraphs
     for($i=0; $i<count($paragraphs); $i++) {
         
@@ -277,8 +277,9 @@ function textAnalyzer(){
 
                 }
                 /* [REGLA 9] */
-                if(strstr($value, '2')){
-                    $secondPersonCounter++;
+                if(strstr($value, '1') || strstr($value, '3')){
+                    $firstPersonCounter++;
+                    $thirdPersonCounter++;
                 }
                 /* [REGLA 10] */
                 if(strstr($value, 'pasiva')){
@@ -311,7 +312,7 @@ function textAnalyzer(){
                 array_push($P7_errors, '- '.$newArray[0].' tiene los siguientes pronombres: ('.$pronsFound .').<br><br>');
             }
             /* [REGLA 9] */
-        	if((int)$secondPersonCounter==0){
+        	if((int)$firstPersonCounter!=0 || (int)$thirdPersonCounter!=0){
         	    array_push($P9_errors, '- '.$newArray[0].'<br>');
         	}            
             /* [REGLA 10] */
@@ -337,10 +338,10 @@ function textAnalyzer(){
     }
     
     if(!empty($P5_errors)){
-        $textAnalyzerArray['P5'] = 'Las siguientes oraciones contienen más de 15 palabras: <br><br>'. implode("<br>", $P5_errors);
+        $textAnalyzerArray['P5'] = 'Las siguientes oraciones contienen más de '.$maxWords['maxW'].' palabras: <br><br>'. implode("<br>", $P5_errors);
     }
     if(!empty($P7_errors)){
-        $textAnalyzerArray['P7'] = 'Las siguientes oraciones contienen más de 2 pronombres: <br><br>' . implode("<br>", $P7_errors);
+        $textAnalyzerArray['P7'] = 'Las siguientes oraciones contienen más de '.$maxProns['maxP'].' pronombres: <br><br>' . implode("<br>", $P7_errors);
     }
     if(!empty($P9_errors)){
         $textAnalyzerArray['P9'] = 'Las siguientes oraciones no contienen expresiones en segunda persona: <br><br>' . implode("<br>", $P9_errors);

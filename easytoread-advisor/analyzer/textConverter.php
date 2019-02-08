@@ -16,6 +16,10 @@ if(!isset($_SESSION)){ session_start(); }
         $text = array();
         
         //Searching tags that can include text
+        $div = $doc->getElementsByTagName('div');
+        foreach ($div as $textTag) {
+            array_push($text, $textTag->nodeValue);
+        }
         $h1 = $doc->getElementsByTagName('h1');
         foreach ($h1 as $textTag) {
             array_push($text, $textTag->nodeValue);
@@ -46,6 +50,10 @@ if(!isset($_SESSION)){ session_start(); }
         }
         $a = $doc->getElementsByTagName('a');
         foreach ($a as $textTag) {
+            array_push($text, $textTag->nodeValue);
+        }
+        $li = $doc->getElementsByTagName('li');
+        foreach ($li as $textTag) {
             array_push($text, $textTag->nodeValue);
         }
         return $text;

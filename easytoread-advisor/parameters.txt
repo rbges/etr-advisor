@@ -1,10 +1,10 @@
 - Pautas de Texto:
 
-El tamaño de las líneas es correcto (máx 60 caracteres).
+El tamaño de las líneas es correcto.
 Los números grandes se expresan de forma correcta.
 El texto no tiene paréntesis, corchetes, porcentajes y otros signos ortográficos difíciles de entender.
 Evitar el uso de caracteres de orden.
-El texto se compone de frases cortas (máx 15 palabras).
+El texto se compone de frases cortas.
 Las fechas se escriben de forma completa.
 El uso de pronombres es correcto.
 No utilizar números romanos.
@@ -24,7 +24,7 @@ El texto no tiene adornos, colores ni sombras.
 El texto utiliza las mayúsculas según las reglas ortográficas.
 El color del texto debe ser negro.
 El color del fondo debe ser blanco sólido.
-La cantidad de palabras en la diapositiva es correcta (máx 50 palabras).
+La cantidad de palabras en la diapositiva es correcta.
 -----------------------------------------------------------------------------------------------------------------------
 - Valores de las Pautas, en porcentaje.
 
@@ -84,8 +84,8 @@ Verdana
 
 - Pauta 2
 ---------------Tamaños mín y máx fuentes:
-12
-16
+22
+36
 
 - Pauta 4
 ---------------Número máx de palabras en negrita:
@@ -101,7 +101,7 @@ Verdana
 
 - Pauta 10
 ---------------Número máx de palabras en cada diapositiva:
-50
+100
 -----------------------------------------------------------------------------------------------------------------------
 Variables texto:
 

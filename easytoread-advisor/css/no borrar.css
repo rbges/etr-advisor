@@ -1,0 +1,384 @@
+/* UPLOAD FILE */
+#upload{
+    margin-left: 42%; 
+    margin-top: 10px
+  }
+  
+  /* MARKETING CONTENT */
+  .marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+  }
+  .marketing h2 {
+  font-weight: normal;
+  }
+  .marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+  }
+  .glyphicon.glyphicon-remove#remove{
+    cursor: pointer;
+    color: black;
+  }
+  .glyphicon.glyphicon-remove#remove:hover{
+    color: red;
+  }
+  .buttonCollapse{
+    width: 50%;
+    margin-top: 0%; 
+    border: 1px solid; 
+    padding-top: 0px; 
+    padding-bottom: 0px   
+  }
+  .featurette-divider {
+    margin: 20px 0px 20px 0px;
+  }
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  
+  /* METODOLOGIA */
+  #metodologia{
+    margin-top: 15px; 
+    padding-left: 20px;
+  }
+  
+  /* PAUTAS */
+  #pautas{
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    text-align: left; 
+    padding-left: 0px
+  }
+  .table thead tr th{
+    text-align: center;
+  }
+  .table tbody tr td{
+    padding-left: 50px;
+  }
+  
+  
+  
+  /* BACK TO TOP BUTTON */
+  .back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
+  
+  .form-group{
+    width: 90%;
+    padding-left: 30px;
+  }
+  #loader {
+    color: var(--bluelight);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  @-webkit-keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  @keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+  
+  /* SLIDE */
+  .info .infoFile .pptx2html{
+      position: relative;
+      width: 960px !important;
+      height: 500px !important;
+      border-color: var(--bluelight);
+      transform: scale(1, 1) !important;
+      transform-origin: 0 !important;
+  }
+  
+  /* MODAL */
+  /* The Modal (background) */
+  .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 9999; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+  }
+  /* Modal Content/Box */
+  .modal-content {
+      background-color: var(--bluelight);
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid var(--bluedark);
+      width: 75%; /* Could be more or less, depending on screen size */
+      border-radius: 20px;
+  }
+  /* Add Zoom Animation */
+  .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+  }
+  @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+  }
+  @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+  }
+  
+  
+  /* RESPONSIVE */
+  @media screen and (max-width: 768px) {
+    .jumbotron {
+      padding-top:20px;
+      padding-bottom:20px;
+    }
+  }
+  @media (min-width: 768px) {
+      .carousel-caption p {
+          margin-bottom: 20px;
+          font-size: 21px;
+          line-height: 1.4;
+      }
+      .featurette-heading {
+          font-size: 40px;
+      }
+      .modal{
+          overflow-y:hidden!important;
+      }
+  }
+  
+  @media (max-width:770px) {
+      .navbar-header{
+          margin-bottom: 10px
+      }
+      .navbar-header h1{
+          text-align: center;
+          margin-right: 0;
+          margin-top: 2%;
+      }
+      .navbar-header img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      #navbarMain a {
+          font-size: 20px;
+          padding: 15px;
+      }
+      #upload{
+          margin-left: 25%;
+      }
+      #pautas {
+          text-align: center;
+      }
+      #metodologia {
+          text-align: center;
+          padding-right: 50px; 
+      }
+      .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+          border-color: white;
+          border-top-style: dotted;
+          margin-left: 10px;
+          width: 100%; 
+      }
+      .row{
+          width: 100%;
+      }
+      #map{
+          width: 100%;
+      }
+      #loader{
+          margin-top: 120px;
+          margin-left: -15%;
+      }
+      
+      .panel-group{
+         margin-left: 10%; 
+      }
+      .panel.panel-info{
+          margin: 20px 0px 0px 30px !important;
+      }
+      .panel.panel-warning{
+          margin: 20px 0px 0px 30px !important;
+      }
+      /*.info .infoFile {
+          width: 700%;
+          left: -300%;
+      }*/
+      #resultados{
+          margin-left: 10%;
+      }
+      #resultados .h2{
+          padding-left: 10%;
+      }
+      #resultados .h5{
+          padding-left: 10%;
+      }
+      #categoria{
+          margin: 0px 3% 0px 10%;
+          width: 90%;
+      }
+      #score{
+          margin-left: 1px;
+      }
+      .progress{
+          margin-left: 10% !important;
+          margin-top: 2% !important;
+          width: 80% !important;
+      }
+      /*.info .infoFile .pptx2html{
+          position: relative;
+          width: 460px !important;
+          height: 450px !important;
+          border-color: white !important;
+          transform: scale(0.33, 1) !important;
+          transform-origin: 0 !important;
+      }*/
+      #descripTables{
+          margin: 20px 0px 0px 30px !important;
+      }
+      /* Modal Content/Box */
+      .modal-content {
+          margin: 35% 25% 20% 12%;
+          border: 1px solid #888;
+          width: 75%; 
+          border-radius: 10px;
+      }
+      #modal-row{
+          padding-left: 5% !important;
+      }
+      #modal-exit{
+          margin-top: 2%;
+          margin-bottom: 2%;
+          margin-right: -2%;
+      }
+      .carousel-caption p {
+          font-family: inherit;
+          font-style: normal;
+          font-size: 18px;
+      }
+      .carousel-caption h2 {
+          font-family: inherit;
+          font-style: normal;
+      }
+  }
+  
+  @media (min-width: 992px) {
+      .container {
+          width: 100%;
+      }
+      .row {
+          padding-left: 40px;
+         width: 100%;
+      }
+      .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+          width: 42%;
+      }
+      .well{
+          width: 100%;
+      }
+      #browse{
+          margin-left: 25%;
+      }
+      .featurette-heading {
+          margin-top: 120px;
+    }
+  }
+  /*-------------------------------------------------------------------------------------------------------------------------------------------------
+  

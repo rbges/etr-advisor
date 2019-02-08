@@ -48,12 +48,12 @@
 
         <!-- Custom styles -->
         <link rel="shortcut icon" type="image/png" href="./images/icono-etr.png" />
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
-    <body>
+    <body style="padding-top: 50px">
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="./images/icono-etr.png" width="30" height="30" class="d-inline-block align-top" alt="Easy to read - Advisor">
@@ -66,7 +66,7 @@
                 <div class="collapse navbar-collapse" id="navbarMain">
                     <ul class="navbar-nav ml-auto">
                         <li>
-                            <a class="btn btn-primary" href="/">Inicio</a>
+                            <a class="btn btn-primary" href="#">Inicio</a>
                         </li>
                         <li>
                             <a class="btn btn-primary" href="#analizar">Analizar</a>
@@ -75,10 +75,13 @@
                             <a class="btn btn-primary" href="#info">Información</a>
                         </li>
                         <li>
+                            <a class="btn btn-primary" href="tutorial.php" target="_blank">Tutorial</a>
+                        </li>
+                        <li>
                             <a class="btn btn-primary" href="#lectura">Lectura fácil</a>
                         </li>
                         <li>
-                            <a class="btn btn-primary" href="#pautas">Pautas</a>
+                            <a class="btn btn-primary" data-toggle="collapse" data-target=".navbar-collapse" href="#pautas">Pautas</a>
                         </li>
                         <li>
                             <a class="btn btn-primary" href="#contacto">Contacto</a>
@@ -105,38 +108,39 @@
                 <div class="row">
                     <div class="col align-self-start">
                         <form action="./input/upload.php" method="post" enctype="multipart/form-data">
-                            <div class="col-lg-6 col-sm-12 col-md-12" id="browse" style="margin-top: 20px">
+                            <center>
+                                <div class="col-lg-6 col-sm-12 col-md-12" style="margin-top: 20px">
                                 <div class="input-group form-inline">
                                     <label class="input-group-btn">
                                         <span class="btn btn-secondary">
                                             Examinar
-                                            <span class="glyphicon glyphicon-folder-open"></span>
                                             <input type="file" name="file_uploaded" style="display: none;">
                                         </span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="Importar diapositiva..." name="file_name" required>
                                 </div>
-                                <center>
-                                    <h6 class="help-block" style="text-align:center; color: #3E606F">
-                                        *Solo se permiten archivos de tipo html.
-                                    </h6>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineTodas" value="todas" checked>
-                                        <label class="form-check-label" for="inlineTodas">Todas</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineTexto" value="texto">
-                                        <label class="form-check-label" for="inlineTexto">Texto</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineMaquetacion" value="maquetacion">
-                                        <label class="form-check-label" for="inlineMaquetacion">Maquetación</label>
-                                    </div>
-                                </center>
-                                <center>
-                                    <input type="submit" class="btn btn-secondary" id="upload" value="Comprobar resultados">
-                                </center>
-                            </div>
+                                    <center>
+                                        <h6 class="help-block" style="text-align:center; color: #3E606F">
+                                            *Solo se permiten archivos de tipo html.
+                                        </h6>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineTodas" value="todas" checked>
+                                            <label class="form-check-label" for="inlineTodas">Todas</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineTexto" value="texto">
+                                            <label class="form-check-label" for="inlineTexto">Texto</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineMaquetacion" value="maquetacion">
+                                            <label class="form-check-label" for="inlineMaquetacion">Maquetación</label>
+                                        </div>
+                                    </center>
+                                    <center>
+                                        <input type="submit" class="btn btn-secondary" id="upload" value="Comprobar resultados">
+                                    </center>
+                                </div>
+                            </center>
                         </form>
                     </div>
                 </div>
@@ -157,66 +161,9 @@
                                     <b>tutorial</b> de como hacerlo.</p>
                                 <center>
                                     <a href="https://slidewiki.org/" class="btn btn-secondary" target="_blank">Slidewiki</a>
-                                    <!-- Collapse -->
-                                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('id01').style.display='block'">Tutorial</button>
+                                    <a href="tutorial.php" class="btn btn-secondary" target="_blank">Tutorial</a>
                                 </center>
-                                <div id="id01" class="modal">
-                                    <div class="modal-content animate" action="/action_page.php">
-                                        <div class="row" id="modal-exit" style="padding-top: 1%;">
-                                            <a type="button" onclick="document.getElementById('id01').style.display='none'" style="float: right !important;padding-right: 4%;">
-                                                <span class="glyphicon glyphicon-remove" id="remove"></span>
-                                            </a>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h2 style="text-align:center">1. Selecciona una diapositiva</h2>
-                                                <blockquote class="blockquote text-center">
-                                                    <p class="mb-0">Una vez hayas accedido a SlideWiki, selecciona una diapositiva, o crea
-                                                        una si lo prefieres. Aquí tienes un repositorio a modo de ejemplo:
-                                                    </p>
-                                                    <a href="https://slidewiki.org/deck/108653/_/deck/108653" class="btn btn-secondary" target="_blank">Repositorio</a>
-                                                </blockquote>
-                                            </div>
-                                            <div class="col">
-                                                <h2 style="text-align:center">2. Accede al modo edición</h2>
-                                                <blockquote class="blockquote text-center">
-                                                    <p class="mb-0">Haz click en "Editar" y podrás realizar los cambios que consideres oportunos
-                                                        en la diapositiva elegida.
-                                                    </p>
-                                                </blockquote>
-                                            </div>
-                                            <div class="col">
-                                                <h2 style="text-align:center">3. Obtén el código HTML</h2>
-                                                <blockquote class="blockquote text-center">
-                                                    <p class="mb-0">Cuando estés listo, pulsa en "Editor HTML". Ahora debes copiar el código
-                                                        que se muestra en la imagen y pegarlo en un editor de texto, y una
-                                                        vez guardado tu archivo con extensión .html, ya podrás comprobar
-                                                        si es de Lectura Fácil.
-                                                    </p>
-                                                </blockquote>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <center>
-                                                    <img class="img-fluid" src="./images/instruc_1.png" alt="Instruccion 1">
-                                                </center>
-                                            </div>
-                                            <div class="col">
-                                                <center>
-                                                    <img class="img-fluid" src="./images/instruc_2.png" alt="Instruccion 2">
-                                                </center>
-                                            </div>
-                                            <div class="col">
-                                                <center>
-                                                    <img class="img-fluid" src="./images/instruc_3.png" alt="Instruccion 3">
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <div class="featurette-divider"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>    
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4 col-lg-4">
@@ -489,8 +436,8 @@
             </div>
 
             <!-- Button back-to-top -->
-            <a id="back-to-top" href="/" class="btn btn-secondary back-to-top" role="button" title="Click para subir" data-toggle="tooltip"
-                data-placement="left">Volver</a>
+            <a id="back-to-top" href="#" class="btn btn-secondary back-to-top" role="button" title="Click para subir" data-toggle="tooltip"
+                    data-placement="left">Volver</a>
 
             <!-- Footer -->
             <center>
@@ -506,26 +453,13 @@
         </div>
 
         <!-- Scripts -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="./scripts/browse.js"></script>
         <script src="./scripts/top.js"></script>
-        <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
     </body>
 
     </html>

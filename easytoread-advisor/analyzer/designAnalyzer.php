@@ -67,14 +67,15 @@ function designAnalyzer(){
             //Split style elements in order to search font-family
             list($fontSize, $value) = preg_split('/[:;]/', $subString);
             $value = trim($value);
-            
-            if (!in_array($value, $accepted_fonts)) {
+            $fontName = preg_split("/[\s,]+/", $value); 
+
+            if (!in_array($fontName[0], $accepted_fonts)) { //First value of the name
                 array_push($P1_errors, $value);
             }
         }
     }
     if (!empty($P1_errors)){
-        $fontsError = implode(", ", $P1_errors);
+        $fontsError = implode(", ",  array_unique($P1_errors));
         $designAnalyzerArray['P1'] = 'Tu diapositiva contiene fuentes no aceptadas: '. $fontsError;
     }
     unset($P1_errors);
@@ -106,7 +107,7 @@ for ($i = 0; $i < $length; $i++) {
 
 if (!empty($P2_errors)){
     $sizeError = implode(", ", $P2_errors);
-    $designAnalyzerArray['P2'] = 'Existen fuentes con tamaño ('.$sizeError.'). Recuerda que el tamaño permitido está entre '.$maxminLength['minL'].' y '.$maxminLength['minL'].'';
+    $designAnalyzerArray['P2'] = 'Existen fuentes con tamaño ('.$sizeError.'). Recuerda que el tamaño permitido está entre '.$maxminLength['minL'].' y '.$maxminLength['maxL'].'';
 }
 unset($P2_errors);   
 
@@ -176,7 +177,7 @@ unset($P2_errors);
             }
         }
     }
-    if ((int)$countBold > (int)$maxBold['maxB']){
+    if ((int)$countBold >= (int)$maxBold['maxB']){
         $designAnalyzerArray['P4'] = 'En tu diapositiva hay demasiadas palabras en negrita('.$countBold .'). Intenta tener un número inferior a '.$maxBold['maxB'].'.';
     }
     
@@ -240,23 +241,20 @@ unset($P2_errors);
 /* 7) El texto utiliza las mayúsculas según las reglas ortográficas. */
 
     //Iteration over the tags returned by "allText" function
-    $j=0; $nWordsCapital=0;
+    $nWordsCapital=0;
     foreach ($slideTags as $tag) {
         //We must split into words
-        $nWordsTag = explode(" ", trim($slideTags[$j]));
+        $nWordsTag = explode(" ", trim($tag));
         
         //Loop through each word. If we find a capital letter, counter is increased.  
         foreach($nWordsTag as $arr){
             if (ctype_upper($arr)){
-               //echo "La cadena  consiste completamente de letras mayúsculas. <br>";
                $nWordsCapital++;
             } 
         }
-        $j++;
     }
-    if ((int)$nWordsCapital > (int)$maxUpper['maxU']){
+    if ((int)$nWordsCapital >= (int)$maxUpper['maxU']){
         $designAnalyzerArray['P7'] = 'Has superado el límite establecido ('.$maxUpper['maxU'].') de palabras completamente en mayúsculas.';
-        //echo "ERROR, has superado el límite de mayúsculas establecido";
     }
 
 /* 8) El color del texto debe ser negro. */	
@@ -327,17 +325,16 @@ unset($P2_errors);
    
 /* 10) La cantidad de palabras en la diapositiva es correcta (máx 50 palabras). */
 
-    //Counting all words in array returned by "allText" function
-    $i=0; $nWordsSlide = 0; 
+    //Iteration over the tags returned by "allText" function
+    $nWordsSlide=0;
     foreach ($slideTags as $tag) {
-        $nWordsTag = count(explode(" ", trim($slideTags[$i])));
-        $i++;
+        //We must split into words
+        $nWordsTag = count(explode(" ", trim($tag)));
         $nWordsSlide = $nWordsSlide + $nWordsTag;
+        $nbucle++;
     }
-    //echo '[ '.$nWordsSlide.']';
-    if ((int)$nWordsSlide > (int)$maxWords['maxW']){
+    if ((int)$nWordsSlide >= (int)$maxWords['maxW']){
         $designAnalyzerArray['P10'] = 'La diapositiva contiene '.$nWordsSlide.' palabras, y el límite está establecido en '.$maxWords['maxW'].'.';
-        //echo "ERROR, has superado el límite de palabras establecido";
     }
     return $designAnalyzerArray;
 }

@@ -105,12 +105,12 @@
 
         <!-- Custom styles -->
         <link rel="shortcut icon" type="image/png" href="./images/icono-etr.png" />
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
-    <body onload="load()">
+    <body onload="load()" style="padding-top: 50px">
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="./images/icono-etr.png" width="30" height="30" class="d-inline-block align-top" alt="Easy to read - Advisor">
@@ -123,13 +123,16 @@
                 <div class="collapse navbar-collapse" id="navbarMain">
                     <ul class="navbar-nav ml-auto">
                         <li>
-                            <a class="btn btn-primary" href="/">Inicio</a>
+                        <a id="back-to-top" href="#" class="btn btn-primary" data-toggle="tooltip" style="display: none;">Inicio</a>
                         </li>
                         <li>
-                            <a class="btn btn-primary" href="#resultados">Resultados</a>
+                            <a class="btn btn-primary" href="#clasificacion">Clasificación</a>
                         </li>
                         <li>
-                            <a class="btn btn-primary" href="#analisis">Análisis</a>
+                            <a class="btn btn-primary" href="#maquetacion">Maquetación</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary" href="#texto">Texto</a>
                         </li>
                         <li>
                             <a class="btn btn-primary" href="#pautas">Pautas</a>
@@ -146,8 +149,8 @@
             <div class="time" style="display:none;" id="myDiv">
 
                 <!-- Score -->
-                <div class="jumbotron" id="resultados" style="background-color: #3E606F">
-                    <h1 class="display-4">Tus resultados:</h1>
+                <div class="jumbotron" id="clasificacion" style="text-align: center; background-color: #3E606F">
+                    <h1 class="display-4">Tu clasificación es:</h1>
                     <hr class="my-3">
                     <center>
                         <div class="row">
@@ -224,7 +227,7 @@
                 </div>
 
                 <!-- Análisis -->
-                <div class="jumbotron" id="analisis">
+                <div class="jumbotron">
                     <h1 style="text-align:center; color: #3E606F">Analisis de resultados</h1>
                     <center>
                         <h3 style="color:#3E606F">
@@ -247,143 +250,134 @@
                 ?>
                         </h3>
                     </center>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" id="maquetacion" style="text-align: center; font-size: 26px; color: #3E606F">MAQUETACIÓN</div>
+                            <table class="table table-hover">
+                                <tbody style="text-align: left">
 
-                    <hr class="featurette-divider">
-
-                    <div class="row featurette">
-                        <div class="col-md-6">
-                            <div class="panel panel-info">
-                                <div class="panel-heading" style="text-align: center; font-size: 26px; color: #3E606F">MAQUETACIÓN</div>
-                                <table class="table table-hover">
-                                    <tbody style="text-align: left">
-
-                                        <?php
-                        if(($_GET["option"] == "maquetacion") || ($_GET["option"] == "todas")) {
-                            if(!empty($file_uploaded)){
-                                $i=0;
-                                foreach($pautasDesign as $key => $value){
-                                    if(array_key_exists ($key, $designResult)){ ?>
-                                            <tr>
-                                                <td>
-                                                    <div class='panel panel-danger'>
-                                                        <div class='panel-heading'>
-                                                                <a style="color: red" data-toggle='collapse' <?php echo "href=#$key >"; echo $pautasDesign[$key]; ?>
-                                                                    (+info)</a>
-                                                        </div>
-                                                        <div <?php echo "id=$key "; ?> class='panel-collapse collapse'>
-                                                            <div class='panel-body' style="font-size: 16px">
-                                                                <?php echo $designResult[$key]; ?>
-                                                            </div>
+                                    <?php
+                    if(($_GET["option"] == "maquetacion") || ($_GET["option"] == "todas")) {
+                        if(!empty($file_uploaded)){
+                            $i=0;
+                            foreach($pautasDesign as $key => $value){
+                                if(array_key_exists ($key, $designResult)){ ?>
+                                        <tr>
+                                            <td>
+                                                <div class='panel panel-danger'>
+                                                    <div class='panel-heading'>
+                                                            <a style="color: red" data-toggle='collapse' <?php echo "href=#$key >"; echo $pautasDesign[$key]; ?>
+                                                                (+info)</a>
+                                                    </div>
+                                                    <div <?php echo "id=$key "; ?> class='panel-collapse collapse'>
+                                                        <div class='panel-body' style="font-size: 16px">
+                                                            <?php echo $designResult[$key]; ?>
                                                         </div>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <?php } else {}
-                                    $i++;
-                                }
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <?php } else {}
+                                $i++;
                             }
-                            ?>
-
-                                            <?php
-
-                            if(!empty($file_uploaded)){
-                                $i=0;
-                                foreach($pautasDesign as $key => $value){
-                                    if(array_key_exists ($key, $designResult)){} else { ?>
-                                                <tr>
-                                                    <td>
-                                                        <p style="color: green">
-                                                            <?php echo $pautasDesign[$key]; ?>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <?php }
-                                    $i++;
-                                }
-                            }
-                        } else { ?>
-                                                <tr>
-                                                    <td>
-                                                        <p style="text-align: center; color: green">
-                                                            No hay datos.
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                                <?php
                         }
                         ?>
 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-info">
-                                <div class="panel-heading" style="text-align: center; font-size: 26px; color: #3E606F">TEXTO</div>
-                                <table class="table table-hover">
-                                    <tbody style="text-align: left">
                                         <?php
-                        $j=0;
-                        if(($_GET["option"] == "texto") || ($_GET["option"] == "todas")) {
-                            if(!empty($file_uploaded)){
-                                foreach($pautasText as $key => $value){
-                                    if(array_key_exists ($key, $textResult)){ ?>
+
+                        if(!empty($file_uploaded)){
+                            $i=0;
+                            foreach($pautasDesign as $key => $value){
+                                if(array_key_exists ($key, $designResult)){} else { ?>
                                             <tr>
                                                 <td>
-                                                    <div class='panel panel-danger'>
-                                                        <div class='panel-heading'>
-                                                                <a style="color: red" data-toggle='collapse' <?php echo "href=#$key". "_2 >"; echo $pautasText[$key]; ?>
-                                                                    (+info)</a>
-                                                        </div>
-                                                        <div <?php echo "id=$key". "_2 "; ?> class='panel-collapse collapse'>
-                                                            <div class='panel-body' style="font-size: 16px">
-                                                                <?php echo $textResult[$key]; ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <p style="color: green">
+                                                        <?php echo $pautasDesign[$key]; ?>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <?php }
+                                $i++;
+                            }
+                        }
+                    } else { ?>
+                                            <tr>
+                                                <td>
+                                                    <p style="text-align: center; color: green">
+                                                        No hay datos.
+                                                    </p>
                                                 </td>
                                             </tr>
                                             <?php
-                                    }
-                                    $j++;
+                    }
+                    ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" id="texto" style="text-align: center; font-size: 26px; color: #3E606F">TEXTO</div>
+                            <table class="table table-hover">
+                                <tbody style="text-align: left">
+                                    <?php
+                    $j=0;
+                    if(($_GET["option"] == "texto") || ($_GET["option"] == "todas")) {
+                        if(!empty($file_uploaded)){
+                            foreach($pautasText as $key => $value){
+                                if(array_key_exists ($key, $textResult)){ ?>
+                                        <tr>
+                                            <td>
+                                                <div class='panel panel-danger'>
+                                                    <div class='panel-heading'>
+                                                            <a style="color: red" data-toggle='collapse' <?php echo "href=#$key". "_2 >"; echo $pautasText[$key]; ?>
+                                                                (+info)</a>
+                                                    </div>
+                                                    <div <?php echo "id=$key". "_2 "; ?> class='panel-collapse collapse'>
+                                                        <div class='panel-body' style="font-size: 16px">
+                                                            <?php echo $textResult[$key]; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <?php
                                 }
+                                $j++;
                             }
-                        ?>
+                        }
+                    ?>
+                                            <?php
+                        $j=0;
+                        if(!empty($file_uploaded)){
+                            foreach($pautasText as $key => $value){
+                                if(array_key_exists ($key, $textResult)){} else { ?>
+                                                <tr>
+                                                    <td>
+                                                        <p style="color: green">
+                                                            <?php echo $pautasText[$key]; ?>
+                                                        </p>
+                                                    </td>
+                                                </tr>
                                                 <?php
-                            $j=0;
-                            if(!empty($file_uploaded)){
-                                foreach($pautasText as $key => $value){
-                                    if(array_key_exists ($key, $textResult)){} else { ?>
+                                }
+                                $j++;
+                            }
+                        }
+                    } else { ?>
                                                     <tr>
                                                         <td>
-                                                            <p style="color: green">
-                                                                <?php echo $pautasText[$key]; ?>
+                                                            <p style="text-align: center; color: green">
+                                                                No hay datos.
                                                             </p>
                                                         </td>
                                                     </tr>
                                                     <?php
-                                    }
-                                    $j++;
-                                }
-                            }
-                        } else { ?>
-                                                        <tr>
-                                                            <td>
-                                                                <p style="text-align: center; color: green">
-                                                                    No hay datos.
-                                                                </p>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                        }
-                            ?>
+                    }
+                        ?>
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
 
                 <!-- Pautas -->
                 <div class="jumbotron" id="pautas">
@@ -559,8 +553,8 @@
                 </div>
 
                 <!-- Button back-to-top -->
-                <a id="back-to-top" href="/" class="btn btn-secondary back-to-top" role="button" title="Click para subir" data-toggle="tooltip"
-                    data-placement="left">Volver</a>
+                <a id="back-to-top" href="#" class="btn btn-secondary back-to-top" role="button" title="Click para subir" data-toggle="tooltip"
+                    data-placement="left" style="display: none">Volver</a>
 
                 <!-- Footer -->
                 <center>
@@ -577,14 +571,10 @@
         </div>
 
         <!-- Scripts -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="./scripts/loading.js"></script>
         <script src="./scripts/top.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
