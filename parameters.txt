@@ -1,0 +1,145 @@
+- Pautas de Texto:
+
+El tamaño de las líneas es correcto.
+Los números grandes se expresan de forma correcta.
+El texto no tiene paréntesis, corchetes, porcentajes y otros signos ortográficos difíciles de entender.
+Evitar el uso de caracteres de orden.
+El texto se compone de frases cortas.
+Las fechas se escriben de forma completa.
+El uso de pronombres es correcto.
+No utilizar números romanos.
+El texto va dirigido a la persona que lo lee.
+No utilizar la forma pasiva.
+Las oraciones han de tener sujeto.
+El texto se compone de frases simples: sujeto + verbo + complementos.
+-----------------------------------------------------------------------------------------------------------------------
+- Pautas de Maquetación:
+
+El tipo de letra facilita la lectura del texto.
+El tamaño de letra debe ser visiblemente bueno y cómodo para la lectura.
+No utilizar texto en cursiva.
+El texto incluye palabras en negrita de forma poco usada.
+El texto tiene pocas palabras subrayadas.
+El texto no tiene adornos, colores ni sombras.
+El texto utiliza las mayúsculas según las reglas ortográficas.
+El color del texto debe ser negro.
+El color del fondo debe ser blanco sólido.
+La cantidad de palabras en la diapositiva es correcta.
+-----------------------------------------------------------------------------------------------------------------------
+- Valores de las Pautas, en porcentaje.
+
+Texto sobre 50:
+5.263157894736
+2.631578947368    
+5.263157894736
+1.315789473684
+3.947368421052
+0.657894736842
+1.973684210526
+5.263157894736
+6.578947368421
+6.578947368421
+5.263157894736
+5.921052631578
+    
+Maquetación sobre 50:
+6.578947368421
+6.578947368421
+5.263157894736
+4.605263157894
+3.947368421052
+3.289473684210
+2.631578947368
+5.263157894736
+5.921052631578
+5.263157894736
+-----------------------------------------------------------------------------------------------------------------------
+Clasificación
+
+Bajo
+Regular
+Alto
+
+Comentario
+
+Tus diapositivas dificilmente son entendibles, debes cumplir las pautas que proporcionan una lectura fácil.
+Tus diapositivas se pueden entender con dificultades.
+Tus diapositivas cumplen gran parte de las pautas que proporcionan una lectura fácil, ¡Enhorabuena!.
+-----------------------------------------------------------------------------------------------------------------------
+Variables maquetación:
+
+- Pauta 1
+---------------Fuentes aceptadas:
+Arial
+Calibri
+Candara
+Corbel
+Gill Sans
+Helvética
+Myriad
+Segoe
+Tahoma
+Tiresias
+Verdana
+
+- Pauta 2
+---------------Tamaños mín y máx fuentes:
+22
+36
+
+- Pauta 4
+---------------Número máx de palabras en negrita:
+5
+
+- Pauta 5
+---------------Número máx de palabras subrayadas:
+5
+
+- Pauta 7
+---------------Número máx de palabras en mayúscula:
+5
+
+- Pauta 10
+---------------Número máx de palabras en cada diapositiva:
+100
+-----------------------------------------------------------------------------------------------------------------------
+Variables texto:
+
+- Pauta 1
+---------------Número de carácteres por enunciado, frase u oración:
+60
+
+- Pauta 2
+---------------Tamaño de número máximo permitido
+100000
+
+- Pauta 3
+---------------Carácteres especiales:
+¡
+!
+?
+¿
+(
+)
+|
+#
+~
+%
+&
+¬
+<
+>
+\\
+
+- Pauta 4
+-------------Carácteres de orden:
+º
+ª
+
+- Pauta 5
+---------------Número máx de palabras por enunciado, frase u oración:
+15
+
+- Pauta 7
+---------------Número máx de pronombres por enunciado, frase u oración:
+2

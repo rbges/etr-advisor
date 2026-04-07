@@ -1,0 +1,6 @@
+The ever-increasing pace of the advance of the technologies that is taking place today, often does not take into account some of the most basic needs of the human being. Not everyone has the same capacity, there are very different people who need tools to help you and allow you to enjoy and make use of all the information sources that are in the network and that are not always available for people with some Disability.
+
+This end-of-degree job aims to create a Web application that solves this problem. With the creation of this web tool, everyone should be able to create slides in HTML format that are accessible and can be read by all kinds of people. We use approved standards that contain certain important guidelines for this to be possible.
+
+There are already certain tools that meet some of these points, our goal is to gather and optimize all the features in addition to adding certain requirements that improve their efficiency.
+It has been discovered that thanks to this kind of initiatives, many sectors of society such as people with some kind of disability, foreigners or elderly people have been able to enjoy and access more information, which has allowed them to improve their Quality of life.
